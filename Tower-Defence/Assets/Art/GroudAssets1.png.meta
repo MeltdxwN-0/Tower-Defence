@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 261407f6bf0268341b0214bb97437c9a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8482901404314216159
+    second: GroudAssets1_0
+  - first:
+      213: 8400289294964461943
+    second: GroudAssets1_1
+  - first:
+      213: 6508783722594324567
+    second: GroudAssets1_2
+  - first:
+      213: -3096439517256779074
+    second: GroudAssets1_3
+  - first:
+      213: -6506602616355862937
+    second: GroudAssets1_4
+  - first:
+      213: 3763680433478290049
+    second: GroudAssets1_5
+  - first:
+      213: 3234024751338090489
+    second: GroudAssets1_6
+  - first:
+      213: -4939028624211419263
+    second: GroudAssets1_7
+  - first:
+      213: -2343466045738895581
+    second: GroudAssets1_8
+  - first:
+      213: -8515673310597759497
+    second: GroudAssets1_9
+  - first:
+      213: -2950733428071990367
+    second: GroudAssets1_10
+  - first:
+      213: 884231811913275999
+    second: GroudAssets1_11
+  - first:
+      213: -1474792534897681070
+    second: GroudAssets1_12
+  - first:
+      213: 1686976732856504354
+    second: GroudAssets1_13
+  - first:
+      213: -7357254129375658171
+    second: GroudAssets1_14
+  - first:
+      213: -6511898343016901682
+    second: GroudAssets1_15
+  - first:
+      213: 2658821035072475961
+    second: GroudAssets1_16
+  - first:
+      213: 5750499004818240433
+    second: GroudAssets1_17
+  - first:
+      213: -2545975455171928450
+    second: GroudAssets1_18
+  - first:
+      213: -7195204893931067527
+    second: GroudAssets1_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GroudAssets1_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 413
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6afc402e159b570800000000000000
+      internalID: 8482901404314216159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 413
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7719fdc6b92d39470800000000000000
+      internalID: 8400289294964461943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 381
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75054198f48d35a50800000000000000
+      internalID: 6508783722594324567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 381
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eba7d692aac3705d0800000000000000
+      internalID: -3096439517256779074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7664b75d467e3b5a0800000000000000
+      internalID: -6506602616355862937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 315
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18acf85d9674b3430800000000000000
+      internalID: 3763680433478290049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_6
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffe352706091ec20800000000000000
+      internalID: 3234024751338090489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_7
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 315
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f546662ab057bb0800000000000000
+      internalID: -4939028624211419263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_8
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3273b803c065a7fd0800000000000000
+      internalID: -2343466045738895581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_9
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 315
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdbb82fd3042d980800000000000000
+      internalID: -8515673310597759497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abf5e0b493ec07d0800000000000000
+      internalID: -2950733428071990367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_11
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 315
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5ad038e52c654c00800000000000000
+      internalID: 884231811913275999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_12
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d9608d00c788be0800000000000000
+      internalID: -1474792534897681070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_13
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 315
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220d24a8668596710800000000000000
+      internalID: 1686976732856504354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_14
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 333
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54fb9488958c5e990800000000000000
+      internalID: -7357254129375658171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_15
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 297
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3d50365f611a5a0800000000000000
+      internalID: -6511898343016901682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_16
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 297
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933d4d4f4a706e420800000000000000
+      internalID: 2658821035072475961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_17
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 297
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3bd6f9060edcf40800000000000000
+      internalID: 5750499004818240433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_18
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 297
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e1d9b00d0eaacd0800000000000000
+      internalID: -2545975455171928450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroudAssets1_19
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 297
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9772613554f752c90800000000000000
+      internalID: -7195204893931067527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GroudAssets1_0: 8482901404314216159
+      GroudAssets1_1: 8400289294964461943
+      GroudAssets1_10: -2950733428071990367
+      GroudAssets1_11: 884231811913275999
+      GroudAssets1_12: -1474792534897681070
+      GroudAssets1_13: 1686976732856504354
+      GroudAssets1_14: -7357254129375658171
+      GroudAssets1_15: -6511898343016901682
+      GroudAssets1_16: 2658821035072475961
+      GroudAssets1_17: 5750499004818240433
+      GroudAssets1_18: -2545975455171928450
+      GroudAssets1_19: -7195204893931067527
+      GroudAssets1_2: 6508783722594324567
+      GroudAssets1_3: -3096439517256779074
+      GroudAssets1_4: -6506602616355862937
+      GroudAssets1_5: 3763680433478290049
+      GroudAssets1_6: 3234024751338090489
+      GroudAssets1_7: -4939028624211419263
+      GroudAssets1_8: -2343466045738895581
+      GroudAssets1_9: -8515673310597759497
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
