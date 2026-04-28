@@ -1,15 +1,39 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
-//for å styre hvor mange fiender og i hvilken hastighet de kommer
+[System.Serializable]
+public class EnemyGroup
+{
+    public GameObject enemyPrefab;
+    public int enemyCount = 10;
+    public float timeBetweenSpawns = 1f;
+}
+
+[System.Serializable]
+public class Wave
+{
+    public EnemyGroup[] enemyGroups;
+}
+
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [Header("Path")]
     [SerializeField] private Transform pathParent;
-    [SerializeField] private float timeBetweenSpawns = 1f;
-    [SerializeField] private int enemyCount = 10;
+
+    [Header("Waves")]
+    [SerializeField] private Wave[] waves;
+
+    [Header("UI")]
+    [SerializeField] private TMP_Text waveText;
+    [SerializeField] private Button nextWaveButton;
 
     private Transform[] waypoints;
+    private int currentWaveIndex = 0;
+    private int enemiesAlive = 0;
+    private bool isSpawning = false;
+    private bool waitingForNextWave = true;
 
     private void Start()
     {
@@ -20,20 +44,85 @@ public class EnemySpawner : MonoBehaviour
             waypoints[i] = pathParent.GetChild(i);
         }
 
+        if (nextWaveButton != null)
+        {
+            nextWaveButton.onClick.AddListener(StartNextWave);
+            nextWaveButton.gameObject.SetActive(false);
+            nextWaveButton.GetComponentInChildren<TMP_Text>().text = "Next";
+        }
+
+        UpdateWaveUI();
+    }
+
+    public void StartNextWave()
+    {
+        if (isSpawning)
+            return;
+
+        if (currentWaveIndex >= waves.Length)
+            return;
+
+        waitingForNextWave = false;
+
+        if (nextWaveButton != null)
+            nextWaveButton.gameObject.SetActive(false);
+
+        Time.timeScale = 1f;
+
         StartCoroutine(SpawnWave());
     }
 
     private IEnumerator SpawnWave()
     {
-        for (int i = 0; i < enemyCount; i++)
+        isSpawning = true;
+
+        Wave currentWave = waves[currentWaveIndex];
+        UpdateWaveUI();
+
+        foreach (EnemyGroup group in currentWave.enemyGroups)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(timeBetweenSpawns);
+            for (int i = 0; i < group.enemyCount; i++)
+            {
+                SpawnEnemy(group.enemyPrefab);
+                yield return new WaitForSeconds(group.timeBetweenSpawns);
+            }
+        }
+
+        isSpawning = false;
+
+        while (enemiesAlive > 0)
+        {
+            yield return null;
+        }
+
+        currentWaveIndex++;
+
+        if (currentWaveIndex < waves.Length)
+        {
+            PauseBetweenWaves();
+        }
+        else
+        {
+            Debug.Log("Victory");
+            UpdateWaveUI();
         }
     }
-    // for å se hva fienden skal gjøre etter den har spawnet 
-    private void SpawnEnemy()
+
+    private void PauseBetweenWaves()
     {
+        waitingForNextWave = true;
+        Time.timeScale = 0f;
+
+        if (nextWaveButton != null)
+            nextWaveButton.gameObject.SetActive(true);
+
+        UpdateWaveUI();
+    }
+
+    private void SpawnEnemy(GameObject enemyPrefab)
+    {
+        enemiesAlive++;
+
         GameObject enemy = Instantiate(
             enemyPrefab,
             waypoints[0].position,
@@ -41,7 +130,38 @@ public class EnemySpawner : MonoBehaviour
         );
 
         EnemyMovement movement = enemy.GetComponent<EnemyMovement>();
-        movement.SetWaypoints(waypoints);
+
+        if (movement != null)
+        {
+            movement.SetWaypoints(waypoints);
+            movement.SetSpawner(this);
+        }
+    }
+
+    public void EnemyFinished()
+    {
+        enemiesAlive--;
+
+        if (enemiesAlive < 0)
+            enemiesAlive = 0;
+    }
+
+    private void UpdateWaveUI()
+    {
+        if (waveText == null)
+            return;
+
+        if (currentWaveIndex >= waves.Length)
+        {
+            waveText.text = "Victory";
+        }
+        else if (waitingForNextWave)
+        {
+            waveText.text = (currentWaveIndex + 1) + " / " + waves.Length;
+        }
+        else
+        {
+            waveText.text = (currentWaveIndex + 1) + " / " + waves.Length;
+        }
     }
 }
-

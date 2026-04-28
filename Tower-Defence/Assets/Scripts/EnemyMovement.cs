@@ -4,12 +4,26 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float speed = 2f;
+    [SerializeField] private int damageToBase = 1;
 
     private int currentWaypointIndex = 0;
+    private BaseHealth baseHealth;
 
     public void SetWaypoints(Transform[] pathWaypoints)
     {
         waypoints = pathWaypoints;
+    }
+
+    private void Start()
+    {
+        baseHealth = FindObjectOfType<BaseHealth>();
+    }
+
+    private EnemySpawner spawner;
+
+    public void SetSpawner(EnemySpawner enemySpawner)
+    {
+        spawner = enemySpawner;
     }
 
     private void Update()
@@ -40,7 +54,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void ReachEnd()
     {
-        // Her kan jeg senere endre på hpen til fienden
+        if (baseHealth != null)
+        {
+            baseHealth.TakeDamage(damageToBase);
+        }
+
+        if (spawner != null)
+        {
+            spawner.EnemyFinished();
+        }
+
         Destroy(gameObject);
     }
 }
