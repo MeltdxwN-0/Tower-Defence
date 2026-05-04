@@ -37,21 +37,29 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        SetupWaypoints();
+        SetupNextWaveButton();
+        UpdateWaveUI();
+    }
+
+    private void SetupWaypoints()
+    {
         waypoints = new Transform[pathParent.childCount];
 
         for (int i = 0; i < pathParent.childCount; i++)
         {
             waypoints[i] = pathParent.GetChild(i);
         }
+    }
 
+    private void SetupNextWaveButton()
+    {
         if (nextWaveButton != null)
         {
             nextWaveButton.onClick.AddListener(StartNextWave);
             nextWaveButton.gameObject.SetActive(false);
             nextWaveButton.GetComponentInChildren<TMP_Text>().text = "Next";
         }
-
-        UpdateWaveUI();
     }
 
     public void StartNextWave()
@@ -103,20 +111,8 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Victory");
-            UpdateWaveUI();
+            Victory();
         }
-    }
-
-    private void PauseBetweenWaves()
-    {
-        waitingForNextWave = true;
-        Time.timeScale = 0f;
-
-        if (nextWaveButton != null)
-            nextWaveButton.gameObject.SetActive(true);
-
-        UpdateWaveUI();
     }
 
     private void SpawnEnemy(GameObject enemyPrefab)
@@ -136,6 +132,13 @@ public class EnemySpawner : MonoBehaviour
             movement.SetWaypoints(waypoints);
             movement.SetSpawner(this);
         }
+
+        EnemyHealth health = enemy.GetComponent<EnemyHealth>();
+
+        if (health != null)
+        {
+            health.SetSpawner(this);
+        }
     }
 
     public void EnemyFinished()
@@ -143,7 +146,37 @@ public class EnemySpawner : MonoBehaviour
         enemiesAlive--;
 
         if (enemiesAlive < 0)
+        {
             enemiesAlive = 0;
+        }
+    }
+
+    private void PauseBetweenWaves()
+    {
+        waitingForNextWave = true;
+        Time.timeScale = 0f;
+
+        if (nextWaveButton != null)
+        {
+            nextWaveButton.gameObject.SetActive(true);
+        }
+
+        UpdateWaveUI();
+    }
+
+    private void Victory()
+    {
+        waitingForNextWave = false;
+        Time.timeScale = 0f;
+
+        if (nextWaveButton != null)
+        {
+            nextWaveButton.gameObject.SetActive(false);
+        }
+
+        UpdateWaveUI();
+
+        Debug.Log("Victory");
     }
 
     private void UpdateWaveUI()
@@ -157,11 +190,11 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (waitingForNextWave)
         {
-            waveText.text = (currentWaveIndex + 1) + " / " + waves.Length;
+            waveText.text = "Klar for wave " + (currentWaveIndex + 1) + " / " + waves.Length;
         }
         else
         {
-            waveText.text = (currentWaveIndex + 1) + " / " + waves.Length;
+            waveText.text = "Wave: " + (currentWaveIndex + 1) + " / " + waves.Length;
         }
     }
 }
