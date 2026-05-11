@@ -7,8 +7,29 @@ public class Tower : MonoBehaviour
     [SerializeField] private float fireRate = 1f;
     [SerializeField] private int damage = 1;
 
+    [Header("Upgrades")]
+    [SerializeField] private int damageUpgradeAmount = 1;
+    [SerializeField] private float rangeUpgradeAmount = 0.5f;
+    [SerializeField] private float fireRateUpgradeAmount = 0.25f;
+
     private float fireCooldown = 0f;
     private Transform target;
+    private TowerRangeVisual rangeVisual;
+
+    public float Range => range;
+    public float FireRate => fireRate;
+    public int Damage => damage;
+
+    private void Awake()
+    {
+        rangeVisual = GetComponent<TowerRangeVisual>();
+
+        if (rangeVisual != null)
+        {
+            rangeVisual.SetRange(range);
+            rangeVisual.Hide();
+        }
+    }
 
     private void Update()
     {
@@ -62,12 +83,44 @@ public class Tower : MonoBehaviour
         {
             enemyHealth.TakeDamage(damage);
         }
-
-        Debug.Log("Tower skjøt på enemy!");
     }
 
-    private void OnDrawGizmosSelected()
+    public void ShowRange()
     {
-        Gizmos.DrawWireSphere(transform.position, range);
+        if (rangeVisual != null)
+        {
+            rangeVisual.SetRange(range);
+            rangeVisual.Show();
+        }
+    }
+
+    public void HideRange()
+    {
+        if (rangeVisual != null)
+        {
+            rangeVisual.Hide();
+        }
+    }
+
+    public void UpgradeDamage()
+    {
+        damage += damageUpgradeAmount;
+        Debug.Log("Damage upgraded to: " + damage);
+    }
+
+    public void UpgradeRange()
+    {
+        range += rangeUpgradeAmount;
+
+        if (rangeVisual != null)
+            rangeVisual.SetRange(range);
+
+        Debug.Log("Range upgraded to: " + range);
+    }
+
+    public void UpgradeFireRate()
+    {
+        fireRate += fireRateUpgradeAmount;
+        Debug.Log("Fire rate upgraded to: " + fireRate);
     }
 }

@@ -3,14 +3,17 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int goldReward = 3;
 
     private int currentHealth;
     private EnemySpawner spawner;
+    private GoldManager goldManager;
     private bool isDead = false;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        goldManager = FindFirstObjectByType<GoldManager>();
     }
 
     public void SetSpawner(EnemySpawner enemySpawner)
@@ -34,6 +37,11 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         isDead = true;
+
+        if (goldManager != null)
+        {
+            goldManager.AddGold(goldReward);
+        }
 
         if (spawner != null)
         {

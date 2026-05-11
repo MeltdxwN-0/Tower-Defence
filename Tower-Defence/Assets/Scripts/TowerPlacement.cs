@@ -22,11 +22,17 @@ public class TowerPlacement : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Button cancelPlacementButton;
 
+    [Header("Economy")]
+    [SerializeField] private GoldManager goldManager;
+    [SerializeField] private int basicTowerCost = 250;
+
     private Camera mainCamera;
     private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
     private GameObject previewTower;
     private SpriteRenderer previewRenderer;
+
+    public bool IsPlacingTower => selectedTowerPrefab != null;
 
     private void Start()
     {
@@ -66,6 +72,18 @@ public class TowerPlacement : MonoBehaviour
             return;
         }
 
+        if (goldManager == null)
+        {
+            Debug.LogError("GoldManager er ikke koblet i Inspector!");
+            return;
+        }
+
+        if (!goldManager.CanAfford(basicTowerCost))
+        {
+            Debug.Log("Ikke nok gold til Basic Tower.");
+            return;
+        }
+
         selectedTowerPrefab = basicTowerPrefab;
         CreatePreviewTower();
         ShowCancelButton(true);
@@ -93,19 +111,40 @@ public class TowerPlacement : MonoBehaviour
         previewTower = Instantiate(selectedTowerPrefab);
         previewTower.name = selectedTowerPrefab.name + "_Preview";
 
-        MonoBehaviour[] scripts = previewTower.GetComponents<MonoBehaviour>();
-        foreach (MonoBehaviour script in scripts)
+        Tower previewTowerScript = previewTower.GetComponent<Tower>();
+
+        float previewRange = 3f;
+
+        if (previewTowerScript != null)
         {
-            script.enabled = false;
+            previewRange = previewTowerScript.Range;
+            previewTowerScript.enabled = false;
+        }
+
+        Collider2D[] colliders = previewTower.GetComponentsInChildren<Collider2D>();
+
+        foreach (Collider2D col in colliders)
+        {
+            col.enabled = false;
+        }
+
+        SpriteRenderer[] renderers = previewTower.GetComponentsInChildren<SpriteRenderer>();
+
+        foreach (SpriteRenderer renderer in renderers)
+        {
+            renderer.color = validPreviewColor;
+            renderer.sortingOrder = 100;
+        }
+
+        TowerRangeVisual rangeVisual = previewTower.GetComponent<TowerRangeVisual>();
+
+        if (rangeVisual != null)
+        {
+            rangeVisual.SetRange(previewRange);
+            rangeVisual.Show();
         }
 
         previewRenderer = previewTower.GetComponent<SpriteRenderer>();
-
-        if (previewRenderer != null)
-        {
-            previewRenderer.color = validPreviewColor;
-            previewRenderer.sortingOrder = 100;
-        }
     }
 
     private void UpdatePreviewPosition()
@@ -140,6 +179,12 @@ public class TowerPlacement : MonoBehaviour
         }
 
         Vector3 placePosition = groundTilemap.GetCellCenterWorld(cellPosition);
+
+        if (!goldManager.SpendGold(basicTowerCost))
+        {
+            Debug.Log("Ikke nok gold til å plassere tower.");
+            return;
+        }
 
         Instantiate(selectedTowerPrefab, placePosition, Quaternion.identity);
         occupiedCells.Add(cellPosition);

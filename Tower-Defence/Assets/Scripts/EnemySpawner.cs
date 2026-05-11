@@ -190,7 +190,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (waitingForNextWave)
         {
-            waveText.text = "Klar for wave " + (currentWaveIndex + 1) + " / " + waves.Length;
+            waveText.text = "Wave " + (currentWaveIndex + 1) + " / " + waves.Length;
         }
         else
         {
